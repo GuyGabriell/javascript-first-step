@@ -1,9 +1,21 @@
 <!--
 DATA 
 types 
-strings and references types
+primitive types
+strings
+numbers
+booleans
+null
+undefined
+symbol
 
-strings types 
+Reference types
+object
+array
+functions
+dates 
+
+strings
 var str = 'hello world'
 var myString = 'hello world'
 var myString = "hello world"
@@ -13,7 +25,7 @@ you can also grab the length of a string
 str.length
 myString.length
 
-references types[numbers]
+numbers
 var num = 10
 var myNum = 10
 var myNum = 10.5
@@ -57,12 +69,74 @@ myNum * 'hello world'
      symbol is not a reference type
      symbol();
 
-   data types
+   data primitive types
      strings
      number
      boolean
       null
       undefined
       symbol
+
+      #reference types
+       object
+       array  
+       function
+
+       object
+        var obj = {} -- this is refers to as and object literal
+        obj.name = 'joe'
+        obj.age = 10
+        obj.isMale = true
+        obj.hobbies = ['reading', 'coding', video games']
+        obj.hobbies.push('playing')
+        obj.hobbies.push('sleeping')
+        console.log(obj)
+
+
+now to build  a person object 
+const person = {
+  name: 'joe',
+  age: 10,
+  job: 'developer',
+  hobbies: ['reading', 'coding', 'video games'],--has an array of nested objects
+}
+
+# arrays
+a collection of values of items etc.
+const people = ['joe', 'andrew', 'guy']
+ 
+you can also use the typeOf operator to check the type of array 
+ e.g typeOf people---object
+ typeOf person---object
+
+ reference types are also refers to as objects as well 
+ that is its returns object
+
+ # functions
+ a function is a block of code that can be called and executed
+  functions are used to perform a specific task
+  define a function
+  declare a function
+  call a function
+   function sayHi() {console.log('hi')}
+    sayHi()
+
+    typeOf sayHi()---it returns as a function type
+
+    functions are also objects 
+    e.g  date = new Date()
+    date.getDate()
+    typeOf date---object
+ new Date()
+ new Date().getDate()
+
+ # dates
+ a date is a specific point in time
+ you can use the Date() constructor to create a date object
+const date = new Date()
+date.getDate()
+date.getMonth()
+date.getFullYear()
+
 
 -->
