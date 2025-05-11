@@ -1,0 +1,1 @@
+/* how to define o r declare a string */
