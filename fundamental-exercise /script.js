@@ -38,3 +38,27 @@ function ensureQuestion(str) {
 
 
 
+function maxNumbers(numbers) {
+  let maxNumbers = numbers[0];
+
+ // for (let i = 0; i < numbers.length; i++) {
+ //   if (numbers[i] > maxNumbers) {
+ //     maxNumbers = numbers[i];
+ //   }
+ //}
+
+
+ //numbers.forEach(number => {
+ //  if (number > maxNumbers) {
+ //    maxNumbers = number;
+ //  }
+ //});
+
+ //return maxNumbers;
+
+ return Math.max(...numbers);
+}
+
+
+console.log(maxNumbers([1, 2, 3,]));
+console.log(maxNumbers([1, 2, 3, 10, 100]));
