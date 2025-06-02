@@ -88,5 +88,29 @@ function sarcasticCase(str) {
 }
 
 
-console.log(sarcasticCase('Hello there'));
-console.log(sarcasticCase('React is a library'));
+//console.log(sarcasticCase('Hello there'));
+//console.log(sarcasticCase('React is a library'));
+
+
+// nospace go throught each char in  str and update it if there is space
+
+function noSpace(str) {
+  let newString = "";
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] !== " ") {
+      newString = newString + str[i];
+    }
+  }
+
+  //return newString;
+
+  //you can also use the split and join methods
+
+  return str.split(' ').join('');
+}
+
+
+
+ console.log(noSpace('Hello there'));
+ console.log(noSpace('I am cool'));
