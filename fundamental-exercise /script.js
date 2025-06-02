@@ -112,5 +112,29 @@ function noSpace(str) {
 
 
 
- console.log(noSpace('Hello there'));
- console.log(noSpace('I am cool'));
+ //console.log(noSpace('Hello there'));
+ //console.log(noSpace('I am cool'));
+
+
+ //given an array of numbers square each  and returnn their sum
+
+ function squareSum(numbers) {
+   //let result = 0;
+
+   //numbers.forEach (number => {
+   //  //result = result + (number * number);
+   //   result += number * number;
+   //})
+
+   //return result;
+
+   //use map filter and reduce
+   // to first return the aquares of the numbers in the array
+
+   return numbers
+     .map((number) => number * number) // from here it returns the square of each number
+     .reduce((previousValue, currentValue) => previousValue + currentValue, 0); //it can also be represented by any value eg .reduce((total, current) => total + current, 0);
+ }  
+
+ console.log(squareSum([1, 2, 3])); //14
+ console.log(squareSum([3, 5])); //34
