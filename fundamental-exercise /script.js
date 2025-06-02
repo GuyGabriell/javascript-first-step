@@ -60,5 +60,33 @@ function maxNumbers(numbers) {
 }
 
 
-console.log(maxNumbers([1, 2, 3,]));
-console.log(maxNumbers([1, 2, 3, 10, 100]));
+//console.log(maxNumbers([1, 2, 3,]));
+//console.log(maxNumbers([1, 2, 3, 10, 100]));
+
+
+// if i s an EVEN number change to Uppercase but when is ODD change to lowercase
+
+//hello there  -> HeLlO ThErE
+function sarcasticCase(str) {
+  let newString = '';
+
+
+  for (let i = 0; i < str.length; i++) {
+
+  //  if (i % 2 === 0) {
+  //    newString = newString + str[i].toUpperCase();
+  //  }else{
+  //    newString = newString + str[i].toLowerCase();
+
+
+    //make shorter by using ternary operator
+    newString += i % 2 ? str[i].toUpperCase() : str[i].toLowerCase();
+
+  }
+
+  return newString;
+}
+
+
+console.log(sarcasticCase('Hello there'));
+console.log(sarcasticCase('React is a library'));
