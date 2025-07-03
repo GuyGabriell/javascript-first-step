@@ -3,11 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>javascript-first-step</title>
+    <title>working wih DOM</title>
   </head>
   <body>
-    <p>Change this is a content</p>
+    
+    <ul>
+      <li>Go to the store</li>
+      <li>Finish javascript course</li>
+      <li>Take over the world</li>
+    </ul>
 
-    <script src="script.js"></script>
+    <script>
+      //using attributes and values
+      const li = document.createElement('li');
+      li.setAttribute('class', 'todoItem');
+      li.setAttribute('id', 'todoItem');
+      li.textContent = 'New Todo Item';
+
+      const ul = document.querySelector('ul');
+      ul.appendChild(li);
+      console.log(li);
+
+      //using 
+      //const li = document.createElement('li');
+      //li.classList.add('todoItem');
+      //li.setAttribute('id', 'todoItem');
+      //li.textContent = 'New Todo Item';
+
+      //const ul = document.querySelector('ul');
+      //ul.appendChild(li);
+      //console.log(li);
+    </script>
   </body>
 </html>
