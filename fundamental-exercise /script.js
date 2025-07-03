@@ -136,5 +136,29 @@ function noSpace(str) {
      .reduce((previousValue, currentValue) => previousValue + currentValue, 0); //it can also be represented by any value eg .reduce((total, current) => total + current, 0);
  }  
 
- console.log(squareSum([1, 2, 3])); //14
- console.log(squareSum([3, 5])); //34
+//console.log(squareSum([1, 2, 3])); //14
+//console.log(squareSum([3, 5])); //34
+
+
+//positiveSum takes up an array olf numbers and return the sum of the positive numbers
+
+function positiveSum(numbers) {
+  //let total = 0;
+
+  //numbers.forEach((number) => {
+  //  if (number > 0) {
+  //    total += number;
+  //  }
+  //});
+
+  //return total;
+
+//use map filter and reduce
+return numbers
+.filter((number) => number > 0)
+.reduce((total, current) => total + current, 0);
+
+}
+
+ console.log(positiveSum([1, 2, -5, 3])); //6
+ console.log(positiveSum([3, 2, -4, 5])); //10
