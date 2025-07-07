@@ -30,7 +30,22 @@
       //li2.textContent = 'New Todo Item';
       li2.append('New Todo Item again');
 
-      ul.append(li, li2, 'Anything');//by using just append you can give it multiple params 
+      //by using just append you can give it multiple params 
+      //its also add either elements or text nodes
+
+
+
+      //By using the  Element: insertAdjacentHTML() method you have total control where you want to place the element 
+
+      const image = document.createElement('img');
+      image.src = 'https://picsum.photos/150';
+      image.alt = 'Cool pic';
+
+      ul.append(li, li2);
+      //this go directly after the script tag
+      //document.body.append(image);
+
+      ul.insertAdjacentElement('beforeend', image);
      
 
       console.log(li);
