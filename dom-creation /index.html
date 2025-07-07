@@ -27,13 +27,13 @@
      
       //using the append method 
       const li2 = document.createElement('li');
-       li2.setAttribute('class', 'todoItem');
-      li2.setAttribute('id', 'todoItem');
       //li2.textContent = 'New Todo Item';
       li2.append('New Todo Item again');
 
-      ul.appendChild(li);
-      ul.appendChild(li2);
+      ul.append(li, li2, 'Anything');//by using just append you can give it multiple params 
+     
+
+      console.log(li);
 
     </script>
   </body>
