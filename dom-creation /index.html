@@ -70,7 +70,13 @@
       ul.append(clonedTodoItem);
       //you can also use remove to remove item that has been selected to remove from the the DOM
        //ul.remove();
-     
+     //using str to create HTML elements
+
+     const anotherLi = document.createElement('li');
+     anotherLi.innerHTML = `<h2>insert HTML element here as a str</h2>`;
+
+
+     ul.append(anotherLi);
 
     </script>
   </body>
