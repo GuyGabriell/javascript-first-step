@@ -11,14 +11,24 @@
       <li>Go to the store</li>
       <li>Finish javascript course</li>
       <li>Take over the world</li>
+      <li class="todo-item flex">
+        <span class="todo-content">Actual todo item</span>
+        <button class="icon">X</button>
+      </li>
     </ul>
 
     <script>
+
+     
+
+
+      //console.log(clonedTodoItem);
+
       //using attributes and values
-      const li = document.createElement('li');
-      li.setAttribute('class', 'todoItem');
-      li.setAttribute('id', 'todoItem');
-      li.textContent = 'New Todo Item';
+      //const li = document.createElement('li');
+      //li.setAttribute('class', 'todoItem');
+      //li.setAttribute('id', 'todoItem');
+      //li.textContent = 'New Todo Item';
       
 
       const ul = document.querySelector('ul');
@@ -26,9 +36,9 @@
 
      
       //using the append method 
-      const li2 = document.createElement('li');
+      //const li2 = document.createElement('li');
       //li2.textContent = 'New Todo Item';
-      li2.append('New Todo Item again');
+      //li2.append('New Todo Item again');
 
       //by using just append you can give it multiple params 
       //its also add either elements or text nodes
@@ -37,18 +47,30 @@
 
       //By using the  Element: insertAdjacentHTML() method you have total control where you want to place the element 
 
-      const image = document.createElement('img');
-      image.src = 'https://picsum.photos/150';
-      image.alt = 'Cool pic';
+      //const image = document.createElement('img');
+      //image.src = 'https://picsum.photos/150';
+      //image.alt = 'Cool pic';
 
-      ul.append(li, li2);
+      //ul.append(li, li2);
       //this go directly after the script tag
       //document.body.append(image);
 
-      ul.insertAdjacentElement('beforeend', image);
-     
+      //ul.insertAdjacentElement('beforeend', image);
 
-      console.log(li);
+       //cloning nodes - and update the all that needs update 
+
+      const nodeToClone = document.querySelector('.todo-item');
+      const clonedTodoItem = nodeToClone.cloneNode(true);
+
+      
+
+      clonedTodoItem.firstElementChild.textContent = 'Another todo item goes here';
+
+
+      ul.append(clonedTodoItem);
+      //you can also use remove to remove item that has been selected to remove from the the DOM
+       //ul.remove();
+     
 
     </script>
   </body>
