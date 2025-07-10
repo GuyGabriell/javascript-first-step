@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>working wih DOM</title>
+  </head>
+  <body>
+    <h3>Todo List</h3>
+    <ul>
+      <li>
+        <span>Go to the store</span>
+        <button class="edit-todo">Edit</button>
+      </li>
+      <li>
+        <span>Finish javascript course</span>
+        <button class="edit-todo">Edit</button>
+      </li>
+      <li>
+        <span>Take over the world</span>
+        <button class="edit-todo">Edit</button>
+      </li>
+    </ul>
+
+    <div>
+      <button class="clear-todos">Clear all todos</button>
+    </div>
+
+    <a href="https://laracasts.com" class="link">laracasts</a>
+
+    <script>
+      const clearButton = document.querySelector('.clear-todos');
+
+      //this is a named function
+      function handleClick() {
+        console.log('clear button clicked');
+        document.querySelector('h3').textContent = 'CHANGED';
+      }
+
+      clearButton.addEventListener('click', handleClick);
+
+      
+
+
+      //this is an inline function
+      //clearButton.addEventListener('click', function() {
+
+       // console.log('clear button clicked');
+        //say you wnat to change the h3 content
+        //document.querySelector('h3').textContent = 'CHANGED';
+      //})
+    </script>
+  </body>
+</html>
