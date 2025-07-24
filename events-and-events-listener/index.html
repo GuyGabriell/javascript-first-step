@@ -28,24 +28,95 @@
 
     <a href="https://laracasts.com" class="link">laracasts</a>
 
+
+   
+    <form action="server.php">
+      <div>
+        <input type="text" id="firstName" name="firstName" placeholder="First Name" autocomplete="off" />
+      </div>
+
+      <div>
+        <select name="cars" id="cars">
+          <option value="Honda">Honda</option>
+          <option value="Toyota">Toyota</option>
+          <option value="Ford">Ford</option>
+        </select>
+      </div>
+
+      <div>
+        <input type="radio" id="html" name="languages" value="HTML" />
+        <label for="html">HTML</label>
+      </div>
+
+      <div>
+        <input type="radio" id="css" name="languages" value="CSS" />
+        <label for="css">CSS</label>
+      </div>
+
+      <div>
+        <input type="radio" id="javascript" name="languages" value="JavaScript" />
+        <label for="javascript">JavaScript</label>
+      </div>
+
+      <div>
+        <button>Submit Form</button>
+      </div>
+
+    </form>
+
     <script>
       const clearButton = document.querySelector('.clear-todos');
+      const link = document.querySelector('.link');
+      //addEventListener to multiple elements
+      const editButtons = document.querySelectorAll('.edit-todo');
+
+      const myInput = document.querySelector('#firstName');
+      
 
       //this is a named function
-      function handleClick() {
+      function handleClick(event) {
+
+        //this is a way to prevent the default behaviour of the event
+        event.preventDefault();
         console.log('clear button clicked');
         document.querySelector('h3').textContent = 'CHANGED';
+        //remove the event listener
+        clearButton.removeEventListener('click', handleClick);
+      }
+
+      function handleEdit() {
+        console.log('Handle editing todo');
       }
 
       clearButton.addEventListener('click', handleClick);
+      link.addEventListener('click', handleClick);
+      myInput.addEventListener('keydown', function(event) {
+        //console.log('Key was pressed');
+        console.log(event.target);
+      });
 
+      //using arrow function
+   editButtons.forEach(editButton => {
+     editButton.addEventListener('click', handleEdit);
+   });
+
+
+   //so far i have just been working click
+   // you can also use mouseover, mouseout, mouseenter, mouseleave, mousemove, mousedown, mouseup
+   // and also drag, dragstart, dragend, dragenter, dragover, dragleave, drop
+   // and also keypress, keydown, keyup
+   // and also focus, blur, focusout, focusin
+   // also you can use submit, change, input, change, reset, load, unload, abort, error, select, resize, scroll
+  //clientX, clientY, screenX, screenY, offsetX, offsetY e.t.c
       
 
 
       //this is an inline function
-      //clearButton.addEventListener('click', function() {
-
-       // console.log('clear button clicked');
+        
+      clearButton.addEventListener('click', function() {
+        console.log('clear button clicked');
+      });
+         
         //say you wnat to change the h3 content
         //document.querySelector('h3').textContent = 'CHANGED';
       //})
