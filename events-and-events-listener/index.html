@@ -28,11 +28,15 @@
 
     <a href="https://laracasts.com" class="link">laracasts</a>
 
-
-   
     <form action="server.php">
       <div>
-        <input type="text" id="firstName" name="firstName" placeholder="First Name" autocomplete="off" />
+        <input
+          type="text"
+          id="firstName"
+          name="firstName"
+          placeholder="First Name"
+          autocomplete="off"
+        />
       </div>
 
       <div>
@@ -54,75 +58,85 @@
       </div>
 
       <div>
-        <input type="radio" id="javascript" name="languages" value="JavaScript" />
+        <input
+          type="radio"
+          id="javascript"
+          name="languages"
+          value="JavaScript"
+        />
         <label for="javascript">JavaScript</label>
       </div>
 
       <div>
         <button>Submit Form</button>
       </div>
-
     </form>
 
     <script>
-      const clearButton = document.querySelector('.clear-todos');
-      const link = document.querySelector('.link');
+      const clearButton = document.querySelector(".clear-todos");
+      const link = document.querySelector(".link");
       //addEventListener to multiple elements
-      const editButtons = document.querySelectorAll('.edit-todo');
-      const myInput = document.querySelector('#firstName');
-      const mySelect = document.querySelector('#cars');
-      
+      const editButtons = document.querySelectorAll(".edit-todo");
+      const myInput = document.querySelector("#firstName");
+      const mySelect = document.querySelector("#cars");
+      const myRadioButtons = document.querySelectorAll(
+        'input[name="languages"]'
+      );
 
       //this is a named function
       function handleClick(event) {
-
         //this is a way to prevent the default behaviour of the event
         event.preventDefault();
-        console.log('clear button clicked');
-        document.querySelector('h3').textContent = 'CHANGED';
+        console.log("clear button clicked");
+        document.querySelector("h3").textContent = "CHANGED";
         //remove the event listener
-        clearButton.removeEventListener('click', handleClick);
+        clearButton.removeEventListener("click", handleClick);
       }
 
       function handleEdit() {
-        console.log('Handle editing todo');
+        console.log("Handle editing todo");
       }
 
-      clearButton.addEventListener('click', handleClick);
-      link.addEventListener('click', handleClick);
-      myInput.addEventListener('keyup', function(event) {
+      clearButton.addEventListener("click", handleClick);
+      link.addEventListener("click", handleClick);
+      myInput.addEventListener("keyup", function (event) {
         //console.log('Key was pressed');
-          console.log(event.target.value);//to also get the current value  
+        console.log(event.target.value); //to also get the current value
       });
 
-      myInput.addEventListener('blur', function(event) {
-        console.log('I was blurred');
+      myInput.addEventListener("blur", function (event) {
+        console.log("I was blurred");
         //console.log(event.target.value);
       });
 
-
-      mySelect.addEventListener('change', function(event) {
+      mySelect.addEventListener("change", function (event) {
         console.log(event.target.value);
         //console.log(event.target.value);
       });
 
       //using arrow function
-   editButtons.forEach(editButton => {
-     editButton.addEventListener('click', handleEdit);
-   });
+      editButtons.forEach((editButton) => {
+        editButton.addEventListener("click", handleEdit);
+      });
+
+
+      //using querySelectorAll target all the elements 
+      myRadioButtons.forEach((radioButton) => {
+        radioButton.addEventListener("change", function (event) {
+          console.log(event.target.value);
+        });
+      });
 
       //this is an inline function
-        
-      clearButton.addEventListener('click', function() {
-        console.log('clear button clicked');
+      clearButton.addEventListener("click", function () {
+        console.log("clear button clicked");
       });
-         
-        //say you wnat to change the h3 content
-        //document.querySelector('h3').textContent = 'CHANGED';
+
+      //say you wnat to change the h3 content
+      //document.querySelector('h3').textContent = 'CHANGED';
       //})
 
-      //keyboard input 
-      
+      //keyboard input
     </script>
   </body>
 </html>
