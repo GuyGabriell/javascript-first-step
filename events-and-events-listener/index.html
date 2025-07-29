@@ -69,8 +69,8 @@
       const link = document.querySelector('.link');
       //addEventListener to multiple elements
       const editButtons = document.querySelectorAll('.edit-todo');
-
       const myInput = document.querySelector('#firstName');
+      const mySelect = document.querySelector('#cars');
       
 
       //this is a named function
@@ -90,26 +90,26 @@
 
       clearButton.addEventListener('click', handleClick);
       link.addEventListener('click', handleClick);
-      myInput.addEventListener('keydown', function(event) {
+      myInput.addEventListener('keyup', function(event) {
         //console.log('Key was pressed');
-        console.log(event.target);
+          console.log(event.target.value);//to also get the current value  
+      });
+
+      myInput.addEventListener('blur', function(event) {
+        console.log('I was blurred');
+        //console.log(event.target.value);
+      });
+
+
+      mySelect.addEventListener('change', function(event) {
+        console.log(event.target.value);
+        //console.log(event.target.value);
       });
 
       //using arrow function
    editButtons.forEach(editButton => {
      editButton.addEventListener('click', handleEdit);
    });
-
-
-   //so far i have just been working click
-   // you can also use mouseover, mouseout, mouseenter, mouseleave, mousemove, mousedown, mouseup
-   // and also drag, dragstart, dragend, dragenter, dragover, dragleave, drop
-   // and also keypress, keydown, keyup
-   // and also focus, blur, focusout, focusin
-   // also you can use submit, change, input, change, reset, load, unload, abort, error, select, resize, scroll
-  //clientX, clientY, screenX, screenY, offsetX, offsetY e.t.c
-      
-
 
       //this is an inline function
         
@@ -120,6 +120,9 @@
         //say you wnat to change the h3 content
         //document.querySelector('h3').textContent = 'CHANGED';
       //})
+
+      //keyboard input 
+      
     </script>
   </body>
 </html>
