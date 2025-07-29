@@ -82,6 +82,7 @@
       const myRadioButtons = document.querySelectorAll(
         'input[name="languages"]'
       );
+      const myForm = document.querySelector("form");
 
       //this is a named function
       function handleClick(event) {
@@ -112,6 +113,14 @@
       mySelect.addEventListener("change", function (event) {
         console.log(event.target.value);
         //console.log(event.target.value);
+      });
+
+
+      myForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+        console.log("Processin the form");
+        //the actual submit method 
+        myForm.submit();
       });
 
       //using arrow function
